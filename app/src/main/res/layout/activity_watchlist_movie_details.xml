@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.WatchlistDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <!-- Enable scrolling view -->
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Main container -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Top images -->
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="220dp"
+                        android:id="@+id/imageViewPoster1"
+                        />
+                    <ImageView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:id="@+id/imageViewPoster"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <!-- Vertical line -->
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="10dp"
+                    android:background="@android:color/darker_gray"/>
+
+                <!-- Movie details -->
+                <LinearLayout
+                    android:paddingLeft="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewTitle"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewOriginalTitle"
+                        android:textSize="14sp"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewGenre"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewPlot"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewVote"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewYear"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <!-- Vertical line -->
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="10dp"
+                    android:background="@android:color/darker_gray"/>
+
+                <!-- Comment -->
+                <LinearLayout
+                    android:id="@+id/section_comment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:paddingLeft="10dp">
+                    <TextView
+                        android:text="Comment: "
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="italic"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/text_comment_result"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="italic"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+                <View
+                    android:id="@+id/line_after_comment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="10dp"
+                    android:background="@android:color/darker_gray"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/button_vote"
+                    android:text="@string/vote"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="voteMovie"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- Casts -->
+                <LinearLayout
+                    android:id="@+id/layout_cast"
+                    android:paddingLeft="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent">
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
